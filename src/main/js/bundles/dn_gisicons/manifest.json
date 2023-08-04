@@ -1,0 +1,11 @@
+{
+    "name": "dn_gisicons",
+    "version": "6.4.0-SNAPSHOT",
+    "title": "${bundleName}",
+    "description": "${bundleDescription}",
+    "productName": "devnet-mapapps-gisicons",
+    "CSS-Themes-Extension": [{
+        "name": "*",
+        "files": ["./css/styles.css"]
+    }]
+}

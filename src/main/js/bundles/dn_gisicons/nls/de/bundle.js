@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export default {
-    root: {
-        bundleName: "Hello World",
-        bundleDescription: "This bundle prints Hello.",
-        hello: "Hello World"
-    },
-    de: true
+module.exports = {
+    bundleName: "Font-GIS Icon Set",
+    bundleDescription: "Dieses Bundle stellt das Icon Paket 'font-gis' als map.apps Bundle bereit. Weitere Infos unter https://viglino.github.io/font-gis."
 };
