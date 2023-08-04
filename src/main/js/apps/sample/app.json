@@ -1,9 +1,13 @@
 {
+    "properties": {
+        "title": "Font-GIS Icons"
+    },
     "load": {
         "bundleLocations": [
             "localbundles",
             "bundles"
         ],
+        "preFetchBundles": false,
         "allowedBundles": [
             "system",
             "console",
@@ -11,21 +15,16 @@
             "splashscreen",
             "templatelayout",
             "template-seasons",
-            "theme-autumn",
             "theme-everlasting",
             "map-init",
             "map-preload-2D",
             "toolset",
+            "toolrules",
             "banner",
             "mapnavigation",
-            "popups-default",
-            "scalebar",
-            "locateme",
-            "parameter-url",
-            "search-ui",
-            "locator-store",
-            "toc",
-            "sample_helloworld"
+            "share-link",
+            "custominfo",
+            "dn_gisicons"
         ]
     },
     "bundles": {
@@ -42,50 +41,131 @@
             "Config": {
                 "basemaps": [
                     {
-                        "id": "esri_street",
-                        "title": "Straßenkarte (grau)",
-                        "thumbnailUrl": "resource('${app}:/images/streets.png')",
-                        "selected": true,
-                        "basemap": "gray-vector"
+                        "id": "esri_hybrid",
+                        "basemap": "hybrid"
                     },
                     {
-                        "id": "esri_hybrid",
-                        "title": "Luftbild (hybrid)",
-                        "thumbnailUrl": "resource('${app}:/images/hybrid.png')",
-                        "basemap": "hybrid"
+                        "id": "esri_satellite",
+                        "basemap": "satellite",
+                        "title": "Satellit"
+                    },
+                    {
+                        "id": "topo",
+                        "selected": true,
+                        "basemap": "topo"
+                    },
+                    {
+                        "id": "custom_gray",
+                        "title": "Gray",
+                        "description": "This basemap uses a custom layer",
+                        "basemap": {
+                            "type": "AGS_TILED",
+                            "url": "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer"
+                        }
                     }
                 ],
                 "map": {
-                    "layers": []
                 },
                 "view": {
                     "viewmode": "2D",
-                    "center": {
-                        "x": 774853,
-                        "y": 6610677,
+                    "extent": {
+                        "xmin": -9276006.978871629,
+                        "xmax": -9257662.092083212,
+                        "ymin": 5245403.351733481,
+                        "ymax": 5255072.635811542,
                         "spatialReference": 3857
-                    },
-                    "scale": 140000
+                    }
                 }
             }
         },
-        "themes": {
-            "ThemeModel": {
-                "_selectedTheme": "autumn"
-            },
-            "ThemeSelector": {
-                "componentEnabled": true
+        "templates": {
+            "TemplateModel": {
+                "_templates": [
+                    {
+                        "name": "seasons",
+                        "widgets": [
+                            {
+                                "widgetRole": "banner",
+                                "sublayout": [
+                                    "mobile_portrait"
+                                ],
+                                "attachTo": "footer_right"
+                            }
+                        ]
+                    }
+                ]
             }
         },
-        "toc": {
-            "Config": {
-                "showBasemaps" : true,
-                "showLayerLegend": true
-            }
+        "custominfo": {
+            "CustomInfoToggleTool": [
+                {
+                    "id": "infoTool",
+                    "title": "App Info",
+                    "toolClass": "ctInfo",
+                    "widgetSettings": {
+                        "content": "This sample shows how font-gis icons can be integrated to map.apps. <a target='_blank' href='https://viglino.github.io/font-gis/?fg=earth'>All available can be seen here</a>. Please note, that the tools are only placeholders in this app to present some sample icons.",
+                        "window": {
+                            "marginBox": {
+                                "l": 50,
+                                "t": 200,
+                                "w": 306,
+                                "h": 200
+                            }
+                        }
+                    },
+                    "rules": {
+                        "groups": "custominfo",
+                        "activateOnStartup": true
+                    }
+                },
+                {
+                    "id": "tool0",
+                    "iconClass": "fg-photogrammetry"
+                },
+                {
+                    "id": "tool1",
+                    "iconClass": "fg-location-man-alt"
+                },
+                {
+                    "id": "tool2",
+                    "iconClass": "fg-story-maps"
+                },
+                {
+                    "id": "tool3",
+                    "iconClass": "fg-gpx-file"
+                },
+                {
+                    "id": "tool4",
+                    "iconClass": "fg-buffer"
+                },
+                {
+                    "id": "tool5",
+                    "iconClass": "fg-drone"
+                },
+                {
+                    "id": "tool7",
+                    "iconClass": "fg-wms"
+                }
+            ]
         },
         "toolset": {
             "ToolsetManager": {
                 "toolsets": [
+                    {
+                        "id": "default_tools",
+                        "title": "Some Font-GIS Icons",
+                        "tools": [
+                            "tool*"
+                        ],
+                        "container": "map",
+                        "window": {
+                            "closable": true
+                        },
+                        "position": {
+                            "rel_l": 50,
+                            "rel_t": 50
+                        }
+                    },
                     {
                         "id": "mapview_tools",
                         "tools": [
@@ -93,46 +173,22 @@
                             "zoomInTool",
                             "zoomOutTool",
                             "compassTool",
-                            "restoreInitialViewTool",
-                            "viewmodeSwitcherTool"
+                            "restoreInitialViewTool"
                         ],
                         "registerWidget": {
                             "widgetRole": "mapview_tools"
                         },
                         "container": "ignore",
                         "windowType": "container",
-                        "cssClass": "muted",
-                        "tooltipPositions": [
-                            "before",
-                            "above",
-                            "below",
-                            "after"
-                        ]
-                    },
-                    {
-                        "id": "drawer_left",
-                        "title": "Werkzeuge",
-                        "cssClass": "ct-main-app-menu",
-                        "tools": [
-                            "tocToggleTool",
-                            "printingToggleTool",
-                            "sharelinkTool",
-                            "helloTool",
-                            "IMPRINT_Imprint_CustomInfoTool",
-                            "IMPRINT_Imprint_CustomInfoTool_mobile"
-                        ],
-                        "registerWidget": {
-                            "widgetRole": "drawer_button"
-                        },
-                        "container": "ignore",
-                        "windowType": "drawer_left",
-                        "tooltipPositions": [
-                            "after",
-                            "above",
-                            "below",
-                            "before"
-                        ]
+                        "cssClass": "muted"
                     }
+                ]
+            }
+        },
+        "toolrules": {
+            "ToolActiveStateManager": {
+                "activateOnStartToolIds": [
+                    "printingEnhancedToggleTool"
                 ]
             }
         }
