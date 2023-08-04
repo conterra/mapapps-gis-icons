@@ -1,6 +1,6 @@
 {
     "name": "dn_gisicons",
-    "version": "6.4.0-SNAPSHOT",
+    "version": "1.0.5-SNAPSHOT",
     "title": "${bundleName}",
     "description": "${bundleDescription}",
     "productName": "devnet-mapapps-gisicons",
