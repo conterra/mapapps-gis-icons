@@ -6,4 +6,4 @@ After installing the bundle to your map.apps installation and adding it to your 
 ### Sample App ###
 https://demos.conterra.de/mapapps/resources/apps/downloads_fontawesome
 
-![Screensot of sample](https://github.com/conterra/mapapps-gis-icons/blob/master/screenshot.png)
+![Screensot of sample]([https://github.com/conterra/mapapps-gis-icons/blob/main/screenshot.png](https://github.com/conterra/mapapps-gis-icons/blob/main/screenshot.png))
