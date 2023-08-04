@@ -25,7 +25,9 @@
             "share-link",
             "custominfo",
             "dn_gisicons"
-        ]
+        ],
+        "styles": ["${app}:app.css"]
+
     },
     "bundles": {
         "banner": {

@@ -1,0 +1,14 @@
+.ctAppRoot {
+    .dijitIcon:is(
+            .icon-plus,
+            .icon-minus,
+            .icon-compass-needle,
+            .icon-house
+        ):before{
+        font-family: "font-gis";
+    }
+    .icon-plus:before { content: "\eaa5" }
+    .icon-minus:before { content: "\eaa6" }
+    .icon-compass-needle:before { content: "\ea8c" }
+    .icon-house:before { content: "\ea62" }
+}
