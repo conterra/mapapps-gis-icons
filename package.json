@@ -20,9 +20,7 @@
         "stylelint": "^13.13.1",
         "stylelint-config-ct-prodeng": "1.0.4",
         "stylelint-config-recommended": "5.0.0",
-        "vue-template-compiler": "2.7.8"
-    },
-    "dependencies": {
+        "vue-template-compiler": "2.7.8",
         "font-gis": "^1.0.5"
     }
 }
