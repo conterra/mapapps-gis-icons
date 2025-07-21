@@ -461,7 +461,7 @@
                 "toolsets": [
                     {
                         "id": "default_tools",
-                        "title": "Some Font-GIS Icons",
+                        "title": "Font-GIS Icons",
                         "tools": [
                             "tool*"
                         ],
